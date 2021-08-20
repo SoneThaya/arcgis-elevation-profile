@@ -9,8 +9,8 @@ const Map = () => {
       "esri/WebScene",
       "esri/views/SceneView",
       "esri/widgets/ElevationProfile",
-    ]).then((WebScene, SceneView, ElevationProfile) => {
-      const scene = new WebScene({
+    ]).then(([WebScene, SceneView, ElevationProfile]) => {
+      const webscene = new WebScene({
         portalItem: {
           id: "9a542f6755274436985617a462ffdf44",
         },
@@ -19,7 +19,7 @@ const Map = () => {
       // create the scene view
       const view = new SceneView({
         container: "viewDiv",
-        map: scene,
+        map: webscene,
         camera: {
           position: {
             spatialReference: { latestWkid: 3857, wkid: 102100 },
